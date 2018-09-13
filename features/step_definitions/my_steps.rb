@@ -25,4 +25,8 @@ Then(/^suma (\d+) posicion$/) do |arg1|
   
 end
 
+Then(/^verifica si posición actual es válida$/) do  
+  text="Llegada"
+  last_response.body.should_not =~ /#{text}/m
+end
 

@@ -1,11 +1,14 @@
 require 'sinatra'
+require './lib/oca.rb'
+
 
 get '/' do
-	@@posicion = 0
+	@@juego = Juego.new
+	@posicion = @@juego.posicion
     erb:oca
 end
 
 get '/mueve' do
-	@@posicion+=1
+	@posicion = @@juego.mueve 
 	erb :oca
 end
