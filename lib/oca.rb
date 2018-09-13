@@ -6,7 +6,12 @@ class Juego
 		return @posicion
 	end
 	def mueve
-		return @posicion+=1
+		@posicion+=1
+		if @posicion >= 10
+			return  "Llegada"
+		else
+			return @posicion
+		end
 	end
 
 end

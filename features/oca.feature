@@ -19,34 +19,19 @@ Scenario: Suma
 	And tiro el dado
 	Then suma 1 posicion
 
-Scenario: Validacion posicion
-	Given Visitar el inicio
-	When Posicion "0"
-	And tiro el dado
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	Then verifica si posición actual es válida
 
 Scenario: Validacion posicion
 	Given Visitar el inicio
 	When Posicion "0"
 	And tiro el dado
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	And suma 1 posicion 
-	Then verifica si posición actual es válida
+	And tiro el dado
+	And tiro el dado
+	And tiro el dado
+	And tiro el dado
+	And tiro el dado
+	And tiro el dado
+	And tiro el dado
+	And tiro el dado
+	And tiro el dado
+	Then verifica que se termina el juego
 
