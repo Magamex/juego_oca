@@ -1,7 +1,4 @@
 require 'sinatra'
-posicion_inicial = 0
-@@posicion = posicion_inicial
-
 
 get '/' do
 	@@posicion = 0
