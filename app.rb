@@ -4,6 +4,8 @@ require './lib/oca.rb'
 
 get '/' do
 	@@juego = Juego.new
+	@mensaje = @@juego.dificultad 
+	erb :oca
 end
 
 get '/camino' do
