@@ -1,14 +1,18 @@
 require 'sinatra'
-require './lib/oca.rb'
+require './lib/camino.rb'
 
+get '/camino' do
+     @@tirada = 2
+     @@imagen = OcaPos.new
 
-get '/' do
-	@@juego = Juego.new
-	@posicion = @@juego.posicion
-    erb:oca
+    erb :camino
 end
 
-get '/mueve' do
-	@posicion = @@juego.mueve 
-	erb :oca
+get '/camino/:posicion' do
+     @@tirada = params["posicion"].to_i
+     @@imagen = OcaPos.new
+
+    erb :camino
 end
+
+
