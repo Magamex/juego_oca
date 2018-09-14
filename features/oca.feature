@@ -1,8 +1,5 @@
 Feature: Juego de la Oca 
 
-Scenario: Inicio
-	Given Visitar el inicio
-	Then Verifico boton de "jugada"
 
 Scenario: Posicion Inicial
 	Given Visitar el inicio
@@ -16,20 +13,12 @@ Scenario: Juga!!!
 Scenario: Suma
 	Given Visitar el inicio
 	When Posicion "0"
-	And tiro el dado
+	And tiro el dado y saco 1
 	Then suma 1 posicion
 
-Scenario: Validacion posicion
+
+Scenario: Valida penalidad
 	Given Visitar el inicio
 	When Posicion "0"
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	Then verifica que se termina el juego
+	And tiro el dado y saco 4
+	Then Veo mensaje de penalidad "retrocede 2 posiciones"
