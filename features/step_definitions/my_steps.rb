@@ -25,3 +25,10 @@ Then(/^verifica que se termina el juego$/) do
   last_response.body.should =~ /#{text}/m
 end
 
+
+Then(/^Veo mensaje de penalidad "(.*?)"$/) do |text|
+	text="retrocede"
+	last_response.body.should =~ /#{text}/m
+
+end
+

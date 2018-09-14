@@ -5,8 +5,14 @@ class Juego
 	def posicion
 		return @posicion
 	end
-	def mueve
-		@posicion+=1
+	def mueve dado=1
+
+		if dado==0
+		@posicion +=1
+		else		
+		@posicion += dado
+		end
+
 		if @posicion >= 10
 			return  "Llegada"
 		else
@@ -14,4 +20,14 @@ class Juego
 		end
 	end
 
+
+	def dificultad_mensaje
+
+		if @posicion==4
+			mueve -2	
+			return "retrocede 2 posiciones"
+		else
+			return @posicion
+		end
+	end
 end

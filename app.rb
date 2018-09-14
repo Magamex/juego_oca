@@ -10,5 +10,8 @@ end
 
 get '/mueve' do
 	@posicion = @@juego.mueve 
+	@mensaje = @@juego.dificultad_mensaje 
 	erb :oca
 end
+
+

@@ -19,17 +19,13 @@ Scenario: Suma
 	And tiro el dado
 	Then suma 1 posicion
 
-Scenario: Validacion posicion
+
+
+Scenario: Valida penalidad
 	Given Visitar el inicio
 	When Posicion "0"
 	And tiro el dado
 	And tiro el dado
 	And tiro el dado
 	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	And tiro el dado
-	Then verifica que se termina el juego
+	Then Veo mensaje de penalidad "retrocede 2 posiciones"
