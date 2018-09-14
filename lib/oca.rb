@@ -21,14 +21,17 @@ class Juego
 	end
 
 
-	def dificultad_mensaje
+	def dificultad
 
 		if @posicion==4
 			mueve -2	
 			return "retrocede 2 posiciones"
 		elsif @posicion==7
 			mueve -1	
-			return "retrocede 1 posiciones"
+			return "retrocede 1 posición"
+		elsif @posicion==8
+			mueve -6	
+			return "retrocede 1 posición"
 		else
 			return @posicion
 		end
