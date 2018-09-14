@@ -26,6 +26,9 @@ class Juego
 		if @posicion==4
 			mueve -2	
 			return "retrocede 2 posiciones"
+		elsif @posicion==7
+			mueve -1	
+			return "retrocede 1 posiciones"
 		else
 			return @posicion
 		end
