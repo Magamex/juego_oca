@@ -4,27 +4,17 @@ require './lib/oca.rb'
 
 get '/' do
 	@@juego = Juego.new
+        @imagen = OcaPos.new 0
 	@mensaje = @@juego.dificultad 
 	erb :oca
 end
 
-get '/camino' do
-     @@tirada = 2
-     @@imagen = OcaPos.new
-
-    erb :camino
-end
-
-get '/camino/:posicion' do
-     @@tirada = params["posicion"].to_i
-     @@imagen = OcaPos.new
-
-    erb :camino
-end
 
 get '/mueve' do
 	@posicion = @@juego.mueve 
 	@mensaje = @@juego.dificultad 
+        @imagen = OcaPos.new @@juego.posicion
+	
 	erb :oca
 end
 

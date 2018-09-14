@@ -16,6 +16,12 @@ Scenario: Suma
 	And tiro el dado y saco 1
 	Then suma 1 posicion
 
+Scenario: Suma
+	Given Visitar el inicio
+	When Posicion "0"
+	And tiro el dado y saco 1
+	Then veo "Posicion actual : 1"
+
 
 Scenario: Valida penalidad
 	Given Visitar el inicio

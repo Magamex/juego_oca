@@ -14,6 +14,11 @@ end
 When /^tiro el dado$/ do
 end
 
+Then(/^veo "(.*?)"$/) do |text|
+  last_response.body.should =~ /#{text}/m
+end
+
+
 When(/^tiro el dado y saco (\d+)$/) do |valor|
 	@@juego.proximo_dado valor.to_i
   click_link("jugada")

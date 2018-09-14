@@ -20,6 +20,7 @@ class Juego
 		
 		@posicion += @proximo_dado
 		@proximo_dado=gira_dado
+		@@tirada = @proximo_dado
 
 		if @posicion >= 10
 			return  "Llegada"
