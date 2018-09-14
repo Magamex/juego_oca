@@ -2,20 +2,31 @@ require 'sinatra'
 require './lib/camino.rb'
 require './lib/oca.rb'
 
+
+
 get '/' do
+
 	@@juego = Juego.new
-        @imagen = OcaPos.new 0
+	@posicion = @@juego.posicion
 	@mensaje = @@juego.dificultad 
+	@imagen = OcaPos.new @@juego.posicion
 	erb :oca
 end
 
 
-get '/mueve' do
+get '/jugar' do
+
 	@posicion = @@juego.mueve 
-	@mensaje = @@juego.dificultad 
-        @imagen = OcaPos.new @@juego.posicion
-	
-	erb :oca
+        if @posicion == -1
+           erb :llegada
+        else
+		@mensaje = @@juego.dificultad 
+		@imagen = OcaPos.new @@juego.posicion
+
+		erb :oca
+        end
 end
+
+
 
 

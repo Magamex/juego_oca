@@ -3,27 +3,48 @@ class Juego
 		@posicion = 0
 		@dado=0
 		@proximo_dado = 0
+		@dificultad = ""
 	end
+
 	def posicion
 		return @posicion
 	end
+
+	def dado
+		return @dado
+	end
+
 	def gira_dado
 		@dado=rand(1..6)
 		return @dado
 	end
 
 	def proximo_dado valor
-		@proximo_dado = valor.to_i
+		@proximo_dado = valor
 	end
 
 	def mueve 
-		
-		@posicion += @proximo_dado
-		@proximo_dado=gira_dado
-		@@tirada = @proximo_dado
+		if @proximo_dado == 0
+			@dado = gira_dado
+		else
+			@dado = @proximo_dado
+		end
+		@posicion += @dado
+
+		@dificultad = ""
+		if @posicion == 4
+			@posicion -= 2
+			@dificultad = "retrocede 2 posiciones"
+		elsif @posicion == 7
+			@posicion -=1
+			@dificultad = "retrocede 1 posición"
+		elsif @posicion == 8
+			@posicion -= 6
+			@dificultad = "retrocede 6 posición"
+		end
 
 		if @posicion >= 10
-			return  "Llegada"
+			return -1
 		else
 			return @posicion
 		end
@@ -31,21 +52,6 @@ class Juego
 
 
 	def dificultad
-
-		if @posicion==4
-			@proximo_dado =-2
-			mueve 	
-			return "retrocede 2 posiciones"
-		elsif @posicion==7
-			@proximo_dado =-1
-			mueve
-			return "retrocede 1 posición"
-		elsif @posicion==8
-			@proximo_dado =-6
-			mueve	
-			return "retrocede 6 posición"
-		else
-			return @posicion
-		end
+		return @dificultad
 	end
 end
