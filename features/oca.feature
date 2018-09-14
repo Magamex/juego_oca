@@ -19,7 +19,6 @@ Scenario: Suma
 	And tiro el dado
 	Then suma 1 posicion
 
-
 Scenario: Validacion posicion
 	Given Visitar el inicio
 	When Posicion "0"
@@ -34,4 +33,3 @@ Scenario: Validacion posicion
 	And tiro el dado
 	And tiro el dado
 	Then verifica que se termina el juego
-

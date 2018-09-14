@@ -11,18 +11,13 @@ Then(/^Posicion "(.*?)"$/) do |arg1|
   last_response.body.should =~ /#{text}/m
 end
 
-
-
-
 When /^tiro el dado$/ do
   click_link("jugada")
 end
 
-
 Then(/^suma (\d+) posicion$/) do |arg1|
   text="1"
   last_response.body.should =~ /#{text}/m
-  
 end
 
 Then(/^verifica que se termina el juego$/) do  
