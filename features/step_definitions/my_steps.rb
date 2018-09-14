@@ -12,10 +12,16 @@ Then(/^Posicion "(.*?)"$/) do |arg1|
 end
 
 When /^tiro el dado$/ do
+end
+
+When(/^tiro el dado y saco (\d+)$/) do |valor|
+	@@juego.proximo_dado valor.to_i
   click_link("jugada")
 end
 
+
 Then(/^suma (\d+) posicion$/) do |arg1|
+	@@juego.proximo_dado arg1.to_i
   text="1"
   last_response.body.should =~ /#{text}/m
 end
